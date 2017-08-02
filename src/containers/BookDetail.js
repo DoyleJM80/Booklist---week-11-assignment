@@ -6,12 +6,13 @@ import { bindActionCreators } from 'redux';
 
 
 class BookDetail extends Component {
+  constructor() {
+    super();
+  };
 
   render() {
     if(!this.props.book) {
-      return (
-        <div>Select a book to get started!</div>
-      )
+      return <div>Select a book to get started!</div>
     }
     return (
       <div className="col-md-4">
@@ -30,7 +31,7 @@ class BookDetail extends Component {
 //activeBook reducer creates activeBook state.
 function mapStateToProps(state) {
   return {
-    book: state.activeBook,
+    book: state.activeBook
   };
 }
 

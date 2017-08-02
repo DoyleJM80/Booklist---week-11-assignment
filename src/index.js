@@ -1,8 +1,6 @@
 //react imports
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
 import './styles/index.css';
 
 
@@ -29,4 +27,4 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <App />
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('#root'));

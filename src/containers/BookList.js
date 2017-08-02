@@ -7,8 +7,14 @@ import { bindActionCreators } from 'redux';
 
 
 class BookList extends Component {
-  render() {
+  constructor() {
+    super();
+  };
 
+  render() {
+    let books = this.props.books.map((book, index) => {
+      return (<li key={index} onClick={() => {this.props.selectBook(book)}}>{book.title}</li>);
+    });
     //must create a map function here to return the following:
 
 
@@ -22,9 +28,11 @@ class BookList extends Component {
     // ******************
 
     return (
-      <ul className="list-group col-sm-4">
-        {/* return your mapped array list items here */}
-      </ul>
+      <div>
+        <ul className="list-group col-sm-4">
+          {books}
+        </ul>
+      </div>
     );
   }
 }
@@ -34,7 +42,7 @@ function mapStateToProps(state) {
   //what is returned will show up as props inside of BookList
   //this gives you access to books in props.. (books would be good for mapping)
   return {
-    books: state.books,
+    books: state.books
   };
 }
 

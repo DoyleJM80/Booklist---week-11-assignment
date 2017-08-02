@@ -28,7 +28,7 @@ class BookList extends Component {
     // ******************
 
     return (
-      <div>
+      <div className="list-container">
         <ul className="list-group col-sm-4">
           {books}
         </ul>

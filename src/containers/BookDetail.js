@@ -12,17 +12,17 @@ class BookDetail extends Component {
 
   render() {
     if(!this.props.book) {
-      return <div>Select a book to get started!</div>
+      return <div className="detail-container select-book">Select a book to get started!</div>
     }
     return (
-      <div className="col-md-4">
-        <h3> Details for: </h3>
-        <h4 className="title">{this.props.book.title}</h4>
-        <div>{this.props.book.pages} pages</div>
-        <div>Author: {this.props.book.author}</div>
-        <div>Price: ${this.props.book.price} USD</div>
-        <div>Published: {this.props.book.published_date} by {this.props.book.publisher}</div>
-        <div>Genre: {this.props.book.category.join(", ")} </div>
+      <div className="col-md-4 detail-container">
+        <h1 className="lighter"> Details for: </h1>
+        <h1 className="title lighter">{this.props.book.title}</h1>
+        <div className="bottom-spacing">{this.props.book.pages} pages</div>
+        <div className="bottom-spacing">Author: {this.props.book.author}</div>
+        <div className="bottom-spacing">Price: ${this.props.book.price} USD</div>
+        <div className="bottom-spacing">Published: {this.props.book.published_date} by {this.props.book.publisher}</div>
+        <div className="bottom-spacing">Genre: {this.props.book.category.join(", ")} </div>
       </div>
     );
   }
